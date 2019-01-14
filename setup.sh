@@ -63,6 +63,8 @@ DEBIAN_FRONTEND=noninteractive apt-get clean
 rm -rf /var/lib/apt/lists/*
 rm -rf /tmp/*
 
+PATH=/opt/xtensa-lx106-elf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
 pip install esptool
 
 cd examples/blinky
