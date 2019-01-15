@@ -1,4 +1,4 @@
-# docker-esp8266
+# docker-esp8266 [![Build Status](https://travis-ci.com/SConaway/docker-esp8266.svg?branch=master)](https://travis-ci.com/SConaway/docker-esp8266)
 
 This is a docker toolchain for the ESP8266/8265 chips. It opens bash.
 
