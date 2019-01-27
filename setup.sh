@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#apt install -y
+# shellcheck disable=SC2164
 
 DEBIAN_FRONTEND=noninteractive apt-get update -qq
 
@@ -40,24 +40,21 @@ chgrp -R build /opt
 
 cd /opt
 su build -c "make"
-#rm -rvf $(ls /opt/ | grep -v xtensa-lx106-elf)
-# DEBIAN_FRONTEND=noninteractive apt-get purge -yq
-#   git \
-#   autoconf \
-#   build-essential \
-#   gperf \
-#   bison \
-#   flex \
-#   texinfo \
-#   libtool \
-#   libncurses5-dev \
-#   wget \
-#   apt-utils \
-#   gawk \
-#   unzip \
-#   libexpat-dev \
-#   help2man \
-#   python2.7-dev \
+DEBIAN_FRONTEND=noninteractive apt-get purge -yq \
+  apt-utils \
+  autoconf \
+  automake \
+  bison \
+  flex \
+  g++ \
+  gcc \
+  git \
+  help2man \
+  libncurses5-dev \
+  libtool \
+  python-dev \
+  texinfo \
+  wget
 DEBIAN_FRONTEND=noninteractive apt-get autoremove -yq --purge
 DEBIAN_FRONTEND=noninteractive apt-get clean
 rm -rf /var/lib/apt/lists/*
@@ -71,4 +68,5 @@ pip install esptool
 
 cd examples/blinky
 make
+rm blinky.o blinky-0x00000.bin  blinky-0x10000.bin
 cd ..
