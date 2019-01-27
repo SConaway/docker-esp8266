@@ -62,8 +62,8 @@ DEBIAN_FRONTEND=noninteractive apt-get autoremove -yq --purge
 DEBIAN_FRONTEND=noninteractive apt-get clean
 rm -rf /var/lib/apt/lists/*
 rm -rf /tmp/*
-rm -rf /opt/crosstool-NG/.build/*
-rm -rf /opt/crosstool-NG/build.log
+rm -rf /opt/crosstool-NG
+rm -rf /opt/.git
 
 PATH=/opt/xtensa-lx106-elf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
