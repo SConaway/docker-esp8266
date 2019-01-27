@@ -10,3 +10,4 @@ before_script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pa
 script:
   - docker build -t sconaway/docker-esp8266 .
   - docker push sconaway/docker-esp8266
+  - docker images
