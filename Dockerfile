@@ -8,4 +8,4 @@ RUN bash /setup.sh
 
 ENV PATH=/opt/xtensa-lx106-elf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash"]
