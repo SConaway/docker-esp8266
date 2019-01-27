@@ -10,4 +10,5 @@ before_script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pa
 script:
   - docker build -t sconaway/docker-esp8266 .
   - docker push sconaway/docker-esp8266
+  - curl -X POST https://hooks.microbadger.com/images/sconaway/docker-esp8266/vNWWPKoK3ey3dxi8QWefQN1ECTA\=
   - docker images
