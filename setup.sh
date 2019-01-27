@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2164
 
+set -ex
+
 DEBIAN_FRONTEND=noninteractive apt-get update -qq
 
 DEBIAN_FRONTEND=noninteractive apt-get install -yq \
@@ -29,7 +31,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -yq \
   libtool-bin \
   libncurses5-dev
 
-RUN rm -rf /opt
+rm -rf /opt
 git clone --recursive https://github.com/pfalcon/esp-open-sdk.git /opt
 useradd -M -s /bin/bash -u 1000 build
 usermod -a -G dialout build
